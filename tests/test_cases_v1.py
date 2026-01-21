@@ -73,9 +73,15 @@ def test_saved_cases_v1_invariants(case: CaseV1) -> None:
         for i, u in enumerate(case["utxos"])
     ]
 
-    res = SimpleMILPSolver(time_limit_seconds=5).solve(
-        SimpleCoinSelectionModel(utxos=utxos, params=params)
-    )
+    model = SimpleCoinSelectionModel(utxos=utxos, params=params)
+    solver = SimpleMILPSolver(time_limit_seconds=5)
+
+    if case.get("expect") == "infeasible":
+        with pytest.raises(RuntimeError):
+            solver.solve(model)
+        return
+
+    res = solver.solve(model)
 
     # Core invariants
     total_in = sum(u.value_sats for u in res.selected)

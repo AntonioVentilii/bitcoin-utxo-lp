@@ -1,11 +1,12 @@
 {
   "cases": [
     {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "8",
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "8.0",
       "min_change_sats": 300,
-      "recipient_output_vbytes": "31",
+      "recipient_output_vbytes": "31.0",
       "target_sats": 155560,
       "utxos": [
         {
@@ -103,12 +104,13 @@
       ]
     },
     {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "5",
-      "min_change_sats": 1,
-      "recipient_output_vbytes": "31",
-      "target_sats": 129818,
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "infeasible",
+      "fee_rate_sat_per_vb": "1.0",
+      "min_change_sats": 1286101,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 199179,
       "utxos": [
         {
           "input_vbytes": "91",
@@ -193,25 +195,22 @@
         {
           "input_vbytes": "68",
           "value_sats": 165360
+        },
+        {
+          "input_vbytes": "148",
+          "value_sats": 149668
         }
       ]
     },
     {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "8",
-      "min_change_sats": 546,
-      "recipient_output_vbytes": "31",
-      "target_sats": 101668,
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "10.0",
+      "min_change_sats": 100,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 187691,
       "utxos": [
-        {
-          "input_vbytes": "68",
-          "value_sats": 18363
-        },
-        {
-          "input_vbytes": "68",
-          "value_sats": 46722
-        },
         {
           "input_vbytes": "58",
           "value_sats": 488
@@ -279,15 +278,18 @@
         {
           "input_vbytes": "58",
           "value_sats": 29178
-        },
-        {
-          "input_vbytes": "148",
-          "value_sats": 26910
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 1942
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "infeasible",
+      "fee_rate_sat_per_vb": "5.0",
+      "min_change_sats": 758610,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 8568,
+      "utxos": [
         {
           "input_vbytes": "148",
           "value_sats": 41603
@@ -303,17 +305,11 @@
         {
           "input_vbytes": "68",
           "value_sats": 13200
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "1",
-      "min_change_sats": 1,
-      "recipient_output_vbytes": "31",
-      "target_sats": 146190,
-      "utxos": [
+        },
+        {
+          "input_vbytes": "58",
+          "value_sats": 36347
+        },
         {
           "input_vbytes": "148",
           "value_sats": 16391
@@ -357,20 +353,21 @@
       ]
     },
     {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "2",
-      "min_change_sats": 1,
-      "recipient_output_vbytes": "31",
-      "target_sats": 80483,
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "5.0",
+      "min_change_sats": 300,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 99407,
       "utxos": [
         {
-          "input_vbytes": "148",
-          "value_sats": 43830
+          "input_vbytes": "58",
+          "value_sats": 21429
         },
         {
-          "input_vbytes": "91",
-          "value_sats": 39807
+          "input_vbytes": "58",
+          "value_sats": 4007
         },
         {
           "input_vbytes": "58",
@@ -435,25 +432,26 @@
         {
           "input_vbytes": "58",
           "value_sats": 34943
+        },
+        {
+          "input_vbytes": "148",
+          "value_sats": 154593
+        },
+        {
+          "input_vbytes": "58",
+          "value_sats": 60717
         }
       ]
     },
     {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "5",
-      "min_change_sats": 1,
-      "recipient_output_vbytes": "31",
-      "target_sats": 2031,
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "infeasible",
+      "fee_rate_sat_per_vb": "5.0",
+      "min_change_sats": 121024,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 86246,
       "utxos": [
-        {
-          "input_vbytes": "58",
-          "value_sats": 28744
-        },
-        {
-          "input_vbytes": "148",
-          "value_sats": 21361
-        },
         {
           "input_vbytes": "148",
           "value_sats": 14271
@@ -481,15 +479,18 @@
         {
           "input_vbytes": "58",
           "value_sats": 14446
-        },
-        {
-          "input_vbytes": "68",
-          "value_sats": 173813
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 72485
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "5.0",
+      "min_change_sats": 300,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 24485,
+      "utxos": [
         {
           "input_vbytes": "91",
           "value_sats": 10213
@@ -513,20 +514,14 @@
         {
           "input_vbytes": "58",
           "value_sats": 27973
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "8",
-      "min_change_sats": 546,
-      "recipient_output_vbytes": "31",
-      "target_sats": 25754,
-      "utxos": [
+        },
         {
-          "input_vbytes": "68",
-          "value_sats": 237877
+          "input_vbytes": "148",
+          "value_sats": 26755
+        },
+        {
+          "input_vbytes": "58",
+          "value_sats": 12427
         },
         {
           "input_vbytes": "91",
@@ -583,25 +578,22 @@
         {
           "input_vbytes": "148",
           "value_sats": 40857
-        },
-        {
-          "input_vbytes": "148",
-          "value_sats": 47220
-        },
-        {
-          "input_vbytes": "68",
-          "value_sats": 49199
         }
       ]
     },
     {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "5",
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "5.0",
       "min_change_sats": 100,
-      "recipient_output_vbytes": "31",
-      "target_sats": 70568,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 101239,
       "utxos": [
+        {
+          "input_vbytes": "148",
+          "value_sats": 17442
+        },
         {
           "input_vbytes": "91",
           "value_sats": 42454
@@ -629,36 +621,34 @@
         {
           "input_vbytes": "91",
           "value_sats": 36414
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "1",
-      "min_change_sats": 300,
-      "recipient_output_vbytes": "31",
-      "target_sats": 102950,
-      "utxos": [
-        {
-          "input_vbytes": "148",
-          "value_sats": 30301
         },
         {
           "input_vbytes": "58",
-          "value_sats": 37707
+          "value_sats": 20153
+        },
+        {
+          "input_vbytes": "58",
+          "value_sats": 25735
+        },
+        {
+          "input_vbytes": "148",
+          "value_sats": 7007
+        },
+        {
+          "input_vbytes": "58",
+          "value_sats": 111448
         },
         {
           "input_vbytes": "68",
-          "value_sats": 15475
+          "value_sats": 4743
         },
         {
           "input_vbytes": "58",
-          "value_sats": 48486
+          "value_sats": 3931
         },
         {
           "input_vbytes": "58",
-          "value_sats": 62013
+          "value_sats": 34518
         },
         {
           "input_vbytes": "58",
@@ -671,17 +661,14 @@
       ]
     },
     {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "2",
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "8.0",
       "min_change_sats": 300,
-      "recipient_output_vbytes": "31",
-      "target_sats": 188324,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 82708,
       "utxos": [
-        {
-          "input_vbytes": "91",
-          "value_sats": 130708
-        },
         {
           "input_vbytes": "148",
           "value_sats": 138734
@@ -741,11 +728,18 @@
         {
           "input_vbytes": "58",
           "value_sats": 241144
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 26774
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "5.0",
+      "min_change_sats": 546,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 147069,
+      "utxos": [
         {
           "input_vbytes": "58",
           "value_sats": 214284
@@ -773,19 +767,13 @@
         {
           "input_vbytes": "148",
           "value_sats": 9821
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "3",
-      "min_change_sats": 1,
-      "recipient_output_vbytes": "31",
-      "target_sats": 104247,
-      "utxos": [
+        },
         {
           "input_vbytes": "91",
+          "value_sats": 40701
+        },
+        {
+          "input_vbytes": "148",
           "value_sats": 37092
         },
         {
@@ -847,15 +835,18 @@
         {
           "input_vbytes": "91",
           "value_sats": 166167
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 2948
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 248426
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "1.0",
+      "min_change_sats": 1,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 186947,
+      "utxos": [
         {
           "input_vbytes": "91",
           "value_sats": 5858
@@ -879,20 +870,18 @@
         {
           "input_vbytes": "148",
           "value_sats": 1867
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "5",
-      "min_change_sats": 100,
-      "recipient_output_vbytes": "31",
-      "target_sats": 132632,
-      "utxos": [
+        },
+        {
+          "input_vbytes": "148",
+          "value_sats": 12939
+        },
         {
           "input_vbytes": "91",
-          "value_sats": 17636
+          "value_sats": 45358
+        },
+        {
+          "input_vbytes": "91",
+          "value_sats": 230536
         },
         {
           "input_vbytes": "148",
@@ -901,15 +890,18 @@
         {
           "input_vbytes": "91",
           "value_sats": 97792
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 22064
-        },
-        {
-          "input_vbytes": "148",
-          "value_sats": 169828
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "8.0",
+      "min_change_sats": 300,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 121828,
+      "utxos": [
         {
           "input_vbytes": "68",
           "value_sats": 18695
@@ -941,17 +933,11 @@
         {
           "input_vbytes": "91",
           "value_sats": 36964
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "10",
-      "min_change_sats": 100,
-      "recipient_output_vbytes": "31",
-      "target_sats": 89628,
-      "utxos": [
+        },
+        {
+          "input_vbytes": "68",
+          "value_sats": 137628
+        },
         {
           "input_vbytes": "68",
           "value_sats": 21427
@@ -995,11 +981,18 @@
         {
           "input_vbytes": "91",
           "value_sats": 21759
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 6247
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "10.0",
+      "min_change_sats": 100,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 169864,
+      "utxos": [
         {
           "input_vbytes": "68",
           "value_sats": 180972
@@ -1027,49 +1020,53 @@
         {
           "input_vbytes": "58",
           "value_sats": 7539
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 2675
-        },
-        {
-          "input_vbytes": "148",
-          "value_sats": 27742
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 226749
-        },
-        {
-          "input_vbytes": "68",
-          "value_sats": 31340
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 34302
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 22521
         }
       ]
     },
     {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "5",
-      "min_change_sats": 546,
-      "recipient_output_vbytes": "31",
-      "target_sats": 125136,
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "infeasible",
+      "fee_rate_sat_per_vb": "3.0",
+      "min_change_sats": 420215,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 121685,
       "utxos": [
         {
-          "input_vbytes": "58",
-          "value_sats": 47445
+          "input_vbytes": "91",
+          "value_sats": 21100
         },
         {
           "input_vbytes": "91",
-          "value_sats": 22753
+          "value_sats": 49001
         },
+        {
+          "input_vbytes": "68",
+          "value_sats": 41094
+        },
+        {
+          "input_vbytes": "148",
+          "value_sats": 29789
+        },
+        {
+          "input_vbytes": "91",
+          "value_sats": 237397
+        },
+        {
+          "input_vbytes": "148",
+          "value_sats": 41833
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "3.0",
+      "min_change_sats": 1,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 91813,
+      "utxos": [
         {
           "input_vbytes": "91",
           "value_sats": 29968
@@ -1125,17 +1122,11 @@
         {
           "input_vbytes": "91",
           "value_sats": 5949
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "5",
-      "min_change_sats": 546,
-      "recipient_output_vbytes": "31",
-      "target_sats": 94047,
-      "utxos": [
+        },
+        {
+          "input_vbytes": "148",
+          "value_sats": 23311
+        },
         {
           "input_vbytes": "148",
           "value_sats": 15535
@@ -1155,14 +1146,21 @@
         {
           "input_vbytes": "58",
           "value_sats": 10607
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 101347
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "1.0",
+      "min_change_sats": 100,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 109471,
+      "utxos": [
         {
           "input_vbytes": "68",
-          "value_sats": 14255
+          "value_sats": 49779
         },
         {
           "input_vbytes": "148",
@@ -1183,17 +1181,15 @@
         {
           "input_vbytes": "91",
           "value_sats": 59933
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "1",
-      "min_change_sats": 546,
-      "recipient_output_vbytes": "31",
-      "target_sats": 23554,
-      "utxos": [
+        },
+        {
+          "input_vbytes": "58",
+          "value_sats": 236898
+        },
+        {
+          "input_vbytes": "148",
+          "value_sats": 42045
+        },
         {
           "input_vbytes": "58",
           "value_sats": 7650
@@ -1209,15 +1205,18 @@
         {
           "input_vbytes": "91",
           "value_sats": 438
-        },
-        {
-          "input_vbytes": "68",
-          "value_sats": 111133
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 209115
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "3.0",
+      "min_change_sats": 100,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 187091,
+      "utxos": [
         {
           "input_vbytes": "58",
           "value_sats": 14688
@@ -1269,29 +1268,26 @@
         {
           "input_vbytes": "148",
           "value_sats": 39661
+        },
+        {
+          "input_vbytes": "148",
+          "value_sats": 21241
+        },
+        {
+          "input_vbytes": "58",
+          "value_sats": 19161
         }
       ]
     },
     {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "5",
-      "min_change_sats": 546,
-      "recipient_output_vbytes": "31",
-      "target_sats": 187729,
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "1.0",
+      "min_change_sats": 300,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 73280,
       "utxos": [
-        {
-          "input_vbytes": "58",
-          "value_sats": 19161
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 47875
-        },
-        {
-          "input_vbytes": "148",
-          "value_sats": 41563
-        },
         {
           "input_vbytes": "91",
           "value_sats": 25687
@@ -1339,27 +1335,25 @@
         {
           "input_vbytes": "58",
           "value_sats": 3952
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "5",
-      "min_change_sats": 100,
-      "recipient_output_vbytes": "31",
-      "target_sats": 114247,
-      "utxos": [
+        },
         {
-          "input_vbytes": "91",
-          "value_sats": 17275
+          "input_vbytes": "148",
+          "value_sats": 221614
+        },
+        {
+          "input_vbytes": "148",
+          "value_sats": 34216
         },
         {
           "input_vbytes": "91",
-          "value_sats": 30657
+          "value_sats": 17051
         },
         {
-          "input_vbytes": "58",
+          "input_vbytes": "91",
+          "value_sats": 2870
+        },
+        {
+          "input_vbytes": "68",
           "value_sats": 33891
         },
         {
@@ -1369,11 +1363,18 @@
         {
           "input_vbytes": "68",
           "value_sats": 5154
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 11583
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "1.0",
+      "min_change_sats": 1,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 195491,
+      "utxos": [
         {
           "input_vbytes": "68",
           "value_sats": 148408
@@ -1413,15 +1414,18 @@
         {
           "input_vbytes": "91",
           "value_sats": 30350
-        },
-        {
-          "input_vbytes": "148",
-          "value_sats": 33467
-        },
-        {
-          "input_vbytes": "68",
-          "value_sats": 36725
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "1.0",
+      "min_change_sats": 100,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 174016,
+      "utxos": [
         {
           "input_vbytes": "91",
           "value_sats": 18581
@@ -1449,19 +1453,13 @@
         {
           "input_vbytes": "58",
           "value_sats": 28979
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "3",
-      "min_change_sats": 546,
-      "recipient_output_vbytes": "31",
-      "target_sats": 72796,
-      "utxos": [
+        },
         {
-          "input_vbytes": "68",
+          "input_vbytes": "91",
+          "value_sats": 8620
+        },
+        {
+          "input_vbytes": "91",
           "value_sats": 38964
         },
         {
@@ -1471,11 +1469,18 @@
         {
           "input_vbytes": "91",
           "value_sats": 43646
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 49747
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "infeasible",
+      "fee_rate_sat_per_vb": "3.0",
+      "min_change_sats": 1373342,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 199788,
+      "utxos": [
         {
           "input_vbytes": "91",
           "value_sats": 17590
@@ -1495,17 +1500,11 @@
         {
           "input_vbytes": "68",
           "value_sats": 4756
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "10",
-      "min_change_sats": 100,
-      "recipient_output_vbytes": "31",
-      "target_sats": 64666,
-      "utxos": [
+        },
+        {
+          "input_vbytes": "68",
+          "value_sats": 15966
+        },
         {
           "input_vbytes": "91",
           "value_sats": 201488
@@ -1537,20 +1536,18 @@
         {
           "input_vbytes": "68",
           "value_sats": 125178
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "2",
-      "min_change_sats": 100,
-      "recipient_output_vbytes": "31",
-      "target_sats": 78672,
-      "utxos": [
+        },
         {
           "input_vbytes": "68",
-          "value_sats": 6201
+          "value_sats": 17195
+        },
+        {
+          "input_vbytes": "91",
+          "value_sats": 44826
+        },
+        {
+          "input_vbytes": "58",
+          "value_sats": 35214
         },
         {
           "input_vbytes": "58",
@@ -1579,15 +1576,18 @@
         {
           "input_vbytes": "68",
           "value_sats": 14381
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 29704
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 34730
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "3.0",
+      "min_change_sats": 100,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 139723,
+      "utxos": [
         {
           "input_vbytes": "68",
           "value_sats": 17788
@@ -1599,32 +1599,22 @@
         {
           "input_vbytes": "68",
           "value_sats": 11966
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "8",
-      "min_change_sats": 100,
-      "recipient_output_vbytes": "31",
-      "target_sats": 92833,
-      "utxos": [
+        },
+        {
+          "input_vbytes": "68",
+          "value_sats": 21329
+        },
         {
           "input_vbytes": "91",
-          "value_sats": 18322
+          "value_sats": 4453
         },
         {
-          "input_vbytes": "58",
-          "value_sats": 20106
+          "input_vbytes": "91",
+          "value_sats": 6855
         },
         {
-          "input_vbytes": "148",
-          "value_sats": 13494
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 38293
+          "input_vbytes": "68",
+          "value_sats": 21297
         },
         {
           "input_vbytes": "58",
@@ -1685,15 +1675,18 @@
         {
           "input_vbytes": "148",
           "value_sats": 12953
-        },
-        {
-          "input_vbytes": "68",
-          "value_sats": 48390
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 47158
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "3.0",
+      "min_change_sats": 1,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 189433,
+      "utxos": [
         {
           "input_vbytes": "68",
           "value_sats": 13089
@@ -1701,19 +1694,13 @@
         {
           "input_vbytes": "91",
           "value_sats": 10802
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "10",
-      "min_change_sats": 546,
-      "recipient_output_vbytes": "31",
-      "target_sats": 112010,
-      "utxos": [
+        },
         {
           "input_vbytes": "148",
+          "value_sats": 26541
+        },
+        {
+          "input_vbytes": "58",
           "value_sats": 18238
         },
         {
@@ -1791,21 +1778,22 @@
         {
           "input_vbytes": "58",
           "value_sats": 17440
-        },
-        {
-          "input_vbytes": "68",
-          "value_sats": 49667
         }
       ]
     },
     {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "8",
-      "min_change_sats": 546,
-      "recipient_output_vbytes": "31",
-      "target_sats": 5533,
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "8.0",
+      "min_change_sats": 100,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 199468,
       "utxos": [
+        {
+          "input_vbytes": "148",
+          "value_sats": 1183
+        },
         {
           "input_vbytes": "68",
           "value_sats": 14138
@@ -1865,11 +1853,18 @@
         {
           "input_vbytes": "148",
           "value_sats": 179366
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 7525
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "10.0",
+      "min_change_sats": 300,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 30900,
+      "utxos": [
         {
           "input_vbytes": "91",
           "value_sats": 25799
@@ -1881,40 +1876,45 @@
         {
           "input_vbytes": "58",
           "value_sats": 9920
+        },
+        {
+          "input_vbytes": "68",
+          "value_sats": 37006
+        },
+        {
+          "input_vbytes": "148",
+          "value_sats": 44274
+        },
+        {
+          "input_vbytes": "68",
+          "value_sats": 30565
         }
       ]
     },
     {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "10",
-      "min_change_sats": 100,
-      "recipient_output_vbytes": "31",
-      "target_sats": 105933,
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "10.0",
+      "min_change_sats": 300,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 129692,
       "utxos": [
         {
-          "input_vbytes": "68",
-          "value_sats": 15949
+          "input_vbytes": "58",
+          "value_sats": 14539
+        },
+        {
+          "input_vbytes": "58",
+          "value_sats": 19062
         },
         {
           "input_vbytes": "68",
-          "value_sats": 222084
+          "value_sats": 28392
         },
         {
-          "input_vbytes": "91",
-          "value_sats": 5112
-        },
-        {
-          "input_vbytes": "148",
-          "value_sats": 2913
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 13729
-        },
-        {
-          "input_vbytes": "148",
-          "value_sats": 203819
+          "input_vbytes": "68",
+          "value_sats": 129085
         },
         {
           "input_vbytes": "91",
@@ -1935,11 +1935,18 @@
         {
           "input_vbytes": "148",
           "value_sats": 23054
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 30527
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "1.0",
+      "min_change_sats": 1,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 148769,
+      "utxos": [
         {
           "input_vbytes": "148",
           "value_sats": 1172
@@ -1979,19 +1986,13 @@
         {
           "input_vbytes": "91",
           "value_sats": 31212
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "3",
-      "min_change_sats": 1,
-      "recipient_output_vbytes": "31",
-      "target_sats": 97832,
-      "utxos": [
+        },
         {
-          "input_vbytes": "58",
+          "input_vbytes": "91",
+          "value_sats": 117847
+        },
+        {
+          "input_vbytes": "91",
           "value_sats": 31302
         },
         {
@@ -2021,13 +2022,20 @@
         {
           "input_vbytes": "148",
           "value_sats": 73368
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "infeasible",
+      "fee_rate_sat_per_vb": "10.0",
+      "min_change_sats": 546,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 1022643,
+      "utxos": [
         {
-          "input_vbytes": "148",
-          "value_sats": 19099
-        },
-        {
-          "input_vbytes": "58",
+          "input_vbytes": "91",
           "value_sats": 48300
         },
         {
@@ -2041,28 +2049,22 @@
         {
           "input_vbytes": "148",
           "value_sats": 49961
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "2",
-      "min_change_sats": 100,
-      "recipient_output_vbytes": "31",
-      "target_sats": 102374,
-      "utxos": [
-        {
-          "input_vbytes": "91",
-          "value_sats": 5169
         },
         {
           "input_vbytes": "68",
-          "value_sats": 12476
+          "value_sats": 165901
         },
         {
           "input_vbytes": "148",
-          "value_sats": 47638
+          "value_sats": 8167
+        },
+        {
+          "input_vbytes": "58",
+          "value_sats": 18026
+        },
+        {
+          "input_vbytes": "58",
+          "value_sats": 34308
         },
         {
           "input_vbytes": "58",
@@ -2083,34 +2085,33 @@
         {
           "input_vbytes": "58",
           "value_sats": 146437
-        },
+        }
+      ]
+    },
+    {
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "8.0",
+      "min_change_sats": 1,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 119993,
+      "utxos": [
         {
           "input_vbytes": "58",
-          "value_sats": 46283
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 44803
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 3191
+          "value_sats": 37248
         },
         {
           "input_vbytes": "68",
-          "value_sats": 9498
+          "value_sats": 45759
+        },
+        {
+          "input_vbytes": "148",
+          "value_sats": 15516
         },
         {
           "input_vbytes": "58",
-          "value_sats": 24978
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 7035
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 47533
+          "value_sats": 12977
         },
         {
           "input_vbytes": "68",
@@ -2127,20 +2128,14 @@
         {
           "input_vbytes": "68",
           "value_sats": 10186
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "3",
-      "min_change_sats": 100,
-      "recipient_output_vbytes": "31",
-      "target_sats": 129222,
-      "utxos": [
+        },
         {
-          "input_vbytes": "148",
-          "value_sats": 49977
+          "input_vbytes": "91",
+          "value_sats": 95128
+        },
+        {
+          "input_vbytes": "58",
+          "value_sats": 43236
         },
         {
           "input_vbytes": "148",
@@ -2173,17 +2168,14 @@
       ]
     },
     {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "8",
-      "min_change_sats": 1,
-      "recipient_output_vbytes": "31",
-      "target_sats": 138529,
+      "base_overhead_vbytes": "10.0",
+      "change_output_vbytes": "31.0",
+      "expect": "feasible",
+      "fee_rate_sat_per_vb": "3.0",
+      "min_change_sats": 100,
+      "recipient_output_vbytes": "31.0",
+      "target_sats": 19010,
       "utxos": [
-        {
-          "input_vbytes": "68",
-          "value_sats": 39648
-        },
         {
           "input_vbytes": "58",
           "value_sats": 31954
@@ -2219,52 +2211,6 @@
         {
           "input_vbytes": "68",
           "value_sats": 110861
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 33949
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 33327
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 5659
-        }
-      ]
-    },
-    {
-      "base_overhead_vbytes": "10",
-      "change_output_vbytes": "31",
-      "fee_rate_sat_per_vb": "3",
-      "min_change_sats": 546,
-      "recipient_output_vbytes": "31",
-      "target_sats": 33783,
-      "utxos": [
-        {
-          "input_vbytes": "148",
-          "value_sats": 90523
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 15885
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 33736
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 19201
-        },
-        {
-          "input_vbytes": "91",
-          "value_sats": 27790
-        },
-        {
-          "input_vbytes": "58",
-          "value_sats": 17605
         }
       ]
     }
