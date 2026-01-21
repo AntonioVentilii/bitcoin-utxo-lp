@@ -1,13 +1,15 @@
+POETRY := poetry run
+
 format:
-	poetry run black .
-	poetry run ruff format .
-	poetry run toml-sort --in-place pyproject.toml
+	$(POETRY)  black .
+	$(POETRY)  ruff format .
+	$(POETRY)  toml-sort --in-place pyproject.toml
 
 lint:
-	poetry run ruff check .
+	$(POETRY)  ruff check .
 
 typecheck:
-	poetry run mypy .
+	$(POETRY)  mypy .
 
 test:
 	pytest
