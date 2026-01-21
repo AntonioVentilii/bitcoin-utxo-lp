@@ -25,9 +25,9 @@ def main() -> None:
     ]
 
     params = SelectionParams(
-        target_sats=300,
-        fee_rate_sat_per_vb=1.0,
-        min_change_sats=1,
+        target_sats=83_000,
+        fee_rate_sat_per_vb=3.0,
+        min_change_sats=546,  # set a dust-ish policy
         sizing=TxSizing(
             base_overhead_vbytes=10.0,
             recipient_output_vbytes=31.0,
@@ -36,7 +36,7 @@ def main() -> None:
     )
 
     model = SimpleCoinSelectionModel(utxos=utxos, params=params)
-    solver = SimpleMILPSolver()
+    solver = SimpleMILPSolver(time_limit_seconds=5)
 
     result = solver.solve(model)
 
