@@ -15,6 +15,16 @@ dependencies = [
   "pulp (>=3.3.0,<4.0.0)"
 ]
 
+[tool.black]
+line-length = 88
+
+[tool.mypy]
+strict = true
+
+[[tool.mypy.overrides]]
+module = ["pulp"]
+ignore_missing_imports = true
+
 [tool.poetry]
 packages = [{include = "bitcoin_utxo_lp", from = "src"}]
 
@@ -29,3 +39,10 @@ mypy = "^1.17.1"
 toml-sort = "^0.24.2"
 types-requests = "^2.32.4.20250913"
 pandas-stubs = "^2.3.0.250703"
+
+[tool.ruff]
+line-length = 88
+fix = true
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

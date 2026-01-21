@@ -1,14 +1,13 @@
 from __future__ import annotations
 
-
 import pytest
 
 from bitcoin_utxo_lp import (
+    UTXO,
     SelectionParams,
     SimpleCoinSelectionModel,
     SimpleMILPSolver,
     TxSizing,
-    UTXO,
 )
 
 
@@ -71,7 +70,8 @@ def test_infeasible_target_too_large_raises() -> None:
 
 
 def test_infeasible_due_to_min_change_raises() -> None:
-    # With one 1000 sat input and fee 140, if target=860 => change=0 which violates min_change=1
+    # With one 1000 sat input and fee 140,
+    # if target=860 => change=0 which violates min_change=1
     utxo = UTXO(txid="a" * 64, vout=0, value_sats=1000, input_vbytes=68.0)
     params = SelectionParams(
         target_sats=860,

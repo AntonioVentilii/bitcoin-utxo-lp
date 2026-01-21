@@ -1,7 +1,9 @@
 from __future__ import annotations
+
 from dataclasses import dataclass
+
 from .model import SimpleCoinSelectionModel
-from .types import SelectionResult, UTXO
+from .types import UTXO, SelectionResult
 
 
 @dataclass(frozen=True, slots=True)
@@ -26,7 +28,8 @@ class SimpleMILPSolver:
 
         prob, x_vars, change_var, _fee_expr, _vbytes_expr = model.build()
 
-        # Pick a solver. CBC is bundled with many PuLP installs; this is the usual default.
+        # Pick a solver.
+        # CBC is bundled with many PuLP installs; this is the usual default.
         solver = pulp.PULP_CBC_CMD(msg=False, timeLimit=self.time_limit_seconds)
         status = prob.solve(solver)
 

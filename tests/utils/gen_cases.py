@@ -1,6 +1,7 @@
 from __future__ import annotations
-import math
+
 import json
+import math
 import random
 from dataclasses import asdict, dataclass
 from pathlib import Path

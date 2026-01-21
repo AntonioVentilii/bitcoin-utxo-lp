@@ -1,8 +1,12 @@
 from __future__ import annotations
-from dataclasses import dataclass
+
 import math
+from dataclasses import dataclass
 from typing import Sequence
-from .types import SelectionParams, UTXO
+
+import pulp
+
+from .types import UTXO, SelectionParams
 
 
 @dataclass(frozen=True, slots=True)
@@ -29,18 +33,20 @@ class SimpleCoinSelectionModel:
             + p.sizing.change_output_vbytes
         )
 
-    def build(self):
+    def build(
+        self,
+    ) -> tuple[
+        pulp.LpProblem,
+        list[pulp.LpVariable],
+        pulp.LpVariable,
+        pulp.LpAffineExpression,
+        pulp.LpAffineExpression,
+    ]:
         """
         Builds and returns:
           (problem, x_vars, change_var, fee_expr, vbytes_expr)
         where x_vars is a list aligned with self.utxos.
         """
-        try:
-            import pulp
-        except ImportError as e:  # pragma: no cover
-            raise ImportError(
-                "PuLP is required for the MILP solver. Install with: pip install pulp"
-            ) from e
 
         p = self.params
 
@@ -85,7 +91,8 @@ class SimpleCoinSelectionModel:
         # Enforce dust / min change (because change output always exists)
         prob += (change >= p.min_change_sats), "min_change"
 
-        # Objective: minimise fee (same as minimise sum(input vbytes) since others are constant)
+        # Objective: minimise fee
+        # (same as minimise sum(input vbytes) since others are constant)
         prob += fee_expr, "minimise_fee"
 
         return prob, x, change, fee_expr, vbytes_expr

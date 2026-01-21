@@ -1,9 +1,9 @@
 from bitcoin_utxo_lp import (
     UTXO,
-    TxSizing,
     SelectionParams,
     SimpleCoinSelectionModel,
     SimpleMILPSolver,
+    TxSizing,
 )
 
 
@@ -43,7 +43,9 @@ def main() -> None:
     print("Selected UTXOs:")
     for u in result.selected:
         print(
-            f"  - {u.txid[:8]}...:{u.vout}  value={u.value_sats} sats  input_vbytes={u.input_vbytes}"
+            f"  - {u.txid[:8]}...:{u.vout}  "
+            f"value={u.value_sats} sats  "
+            f"input_vbytes={u.input_vbytes}"
         )
 
     print()

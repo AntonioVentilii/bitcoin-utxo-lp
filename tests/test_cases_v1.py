@@ -2,33 +2,54 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import TypedDict, cast
 
 import pytest
 
 from bitcoin_utxo_lp import (
+    UTXO,
     SelectionParams,
     SimpleCoinSelectionModel,
     SimpleMILPSolver,
     TxSizing,
-    UTXO,
 )
 
 FIXTURE_PATH = Path(__file__).resolve().parent / "fixtures" / "cases_v1.json"
 
 
-def _load_cases() -> list[dict]:
+class CaseUTXO(TypedDict):
+    value_sats: int
+    input_vbytes: float
+
+
+class CaseV1(TypedDict):
+    base_overhead_vbytes: float
+    recipient_output_vbytes: float
+    change_output_vbytes: float
+    target_sats: int
+    fee_rate_sat_per_vb: float
+    min_change_sats: int
+    utxos: list[CaseUTXO]
+
+
+class CasesPayloadV1(TypedDict):
+    version: int
+    cases: list[CaseV1]
+
+
+def _load_cases() -> list[CaseV1]:
     if not FIXTURE_PATH.exists():
         pytest.skip(
             f"Missing fixture {FIXTURE_PATH}. Generate it with: "
             "poetry run python tests/utils/gen_cases.py"
         )
-    payload = json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
+    payload = cast(CasesPayloadV1, json.loads(FIXTURE_PATH.read_text(encoding="utf-8")))
     assert payload["version"] == 1
     return payload["cases"]
 
 
 @pytest.mark.parametrize("case", _load_cases())
-def test_saved_cases_v1_invariants(case: dict) -> None:
+def test_saved_cases_v1_invariants(case: CaseV1) -> None:
     sizing = TxSizing(
         base_overhead_vbytes=float(case["base_overhead_vbytes"]),
         recipient_output_vbytes=float(case["recipient_output_vbytes"]),

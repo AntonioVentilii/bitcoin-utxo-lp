@@ -1,13 +1,13 @@
-from importlib.metadata import version, PackageNotFoundError
+from importlib.metadata import PackageNotFoundError, version
+
+from .model import SimpleCoinSelectionModel
+from .solver import SimpleMILPSolver
 from .types import (
+    UTXO,
     SelectionParams,
     SelectionResult,
     TxSizing,
-    UTXO,
 )
-from .model import SimpleCoinSelectionModel
-from .solver import SimpleMILPSolver
-
 
 try:
     __version__ = version("bitcoin-utxo-lp")

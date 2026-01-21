@@ -1,9 +1,9 @@
 from bitcoin_utxo_lp import (
     UTXO,
-    TxSizing,
     SelectionParams,
     SimpleCoinSelectionModel,
     SimpleMILPSolver,
+    TxSizing,
 )
 
 
