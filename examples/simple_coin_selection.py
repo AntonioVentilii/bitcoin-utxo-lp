@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from yourlib import (
+from bitcoin_utxo_lp import (
     UTXO,
     TxSizing,
     SelectionParams,
