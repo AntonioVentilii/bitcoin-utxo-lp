@@ -1,6 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass
-from decimal import Decimal, ROUND_CEILING
+import math
 from typing import Sequence
 from .types import SelectionParams, UTXO
 
@@ -17,11 +17,11 @@ class SimpleCoinSelectionModel:
     utxos: Sequence[UTXO]
     params: SelectionParams
 
-    def _ceil_int(self, x: Decimal) -> int:
+    def _ceil_int(self, x: float) -> int:
         # vbytes should be treated as an integer for fee calculation
-        return int(x.to_integral_value(rounding=ROUND_CEILING))
+        return math.ceil(x)
 
-    def fixed_vbytes(self) -> Decimal:
+    def fixed_vbytes(self) -> float:
         p = self.params
         return (
             p.sizing.base_overhead_vbytes
@@ -68,12 +68,12 @@ class SimpleCoinSelectionModel:
         # vbytes = fixed + sum(s_i * x_i)
         fixed_vb = self.fixed_vbytes()
         input_vb_expr = pulp.lpSum(
-            [Decimal(u.input_vbytes) * x_i for u, x_i in zip(self.utxos, x)]
+            [u.input_vbytes * x_i for u, x_i in zip(self.utxos, x)]
         )
         vbytes_expr = fixed_vb + input_vb_expr
 
         # Fee = feerate * vbytes
-        fee_expr = Decimal(p.fee_rate_sat_per_vb) * vbytes_expr
+        fee_expr = (p.fee_rate_sat_per_vb) * vbytes_expr
 
         # Balance equality:
         # sum(v_i * x_i) = target + change + fee
@@ -96,11 +96,7 @@ class SimpleCoinSelectionModel:
         so your library returns consistent, wallet-like figures.
         """
         p = self.params
-        vbytes = self.fixed_vbytes() + sum(
-            (u.input_vbytes for u in selected), Decimal(0)
-        )
+        vbytes = self.fixed_vbytes() + sum((u.input_vbytes for u in selected), 0.0)
         vbytes_i = self._ceil_int(vbytes)
-        fee = (Decimal(p.fee_rate_sat_per_vb) * Decimal(vbytes_i)).to_integral_value(
-            rounding=ROUND_CEILING
-        )
+        fee = math.ceil(float(p.fee_rate_sat_per_vb) * float(vbytes_i))
         return int(fee), int(vbytes_i)

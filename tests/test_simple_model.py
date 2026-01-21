@@ -1,5 +1,3 @@
-from decimal import Decimal
-
 from bitcoin_utxo_lp import (
     UTXO,
     TxSizing,
@@ -11,17 +9,17 @@ from bitcoin_utxo_lp import (
 
 def test_single_utxo_simple_case() -> None:
     utxos = [
-        UTXO("a" * 64, 0, 1_000, Decimal("68")),
+        UTXO("a" * 64, 0, 1_000, 68.0),
     ]
 
     params = SelectionParams(
         target_sats=300,
-        fee_rate_sat_per_vb=Decimal("1"),
+        fee_rate_sat_per_vb=1.0,
         min_change_sats=1,
         sizing=TxSizing(
-            base_overhead_vbytes=Decimal("10"),
-            recipient_output_vbytes=Decimal("31"),
-            change_output_vbytes=Decimal("31"),
+            base_overhead_vbytes=10.0,
+            recipient_output_vbytes=31.0,
+            change_output_vbytes=31.0,
         ),
     )
 

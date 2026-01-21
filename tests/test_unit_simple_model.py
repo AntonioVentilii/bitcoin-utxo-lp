@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from decimal import Decimal
 
 import pytest
 
@@ -15,17 +14,17 @@ from bitcoin_utxo_lp import (
 
 def _default_sizing() -> TxSizing:
     return TxSizing(
-        base_overhead_vbytes=Decimal("10"),
-        recipient_output_vbytes=Decimal("31"),
-        change_output_vbytes=Decimal("31"),
+        base_overhead_vbytes=10.0,
+        recipient_output_vbytes=31.0,
+        change_output_vbytes=31.0,
     )
 
 
 def test_evaluate_fee_and_vbytes_known_case() -> None:
-    utxo = UTXO(txid="a" * 64, vout=0, value_sats=1000, input_vbytes=Decimal("68"))
+    utxo = UTXO(txid="a" * 64, vout=0, value_sats=1000, input_vbytes=68.0)
     params = SelectionParams(
         target_sats=300,
-        fee_rate_sat_per_vb=Decimal("1"),
+        fee_rate_sat_per_vb=1.0,
         min_change_sats=1,
         sizing=_default_sizing(),
     )
@@ -38,10 +37,10 @@ def test_evaluate_fee_and_vbytes_known_case() -> None:
 
 
 def test_solver_single_utxo_happy_path() -> None:
-    utxo = UTXO(txid="a" * 64, vout=0, value_sats=1000, input_vbytes=Decimal("68"))
+    utxo = UTXO(txid="a" * 64, vout=0, value_sats=1000, input_vbytes=68.0)
     params = SelectionParams(
         target_sats=300,
-        fee_rate_sat_per_vb=Decimal("1"),
+        fee_rate_sat_per_vb=1.0,
         min_change_sats=1,
         sizing=_default_sizing(),
     )
@@ -59,10 +58,10 @@ def test_solver_single_utxo_happy_path() -> None:
 
 
 def test_infeasible_target_too_large_raises() -> None:
-    utxo = UTXO(txid="a" * 64, vout=0, value_sats=1000, input_vbytes=Decimal("68"))
+    utxo = UTXO(txid="a" * 64, vout=0, value_sats=1000, input_vbytes=68.0)
     params = SelectionParams(
         target_sats=2000,
-        fee_rate_sat_per_vb=Decimal("1"),
+        fee_rate_sat_per_vb=1.0,
         min_change_sats=1,
         sizing=_default_sizing(),
     )
@@ -73,10 +72,10 @@ def test_infeasible_target_too_large_raises() -> None:
 
 def test_infeasible_due_to_min_change_raises() -> None:
     # With one 1000 sat input and fee 140, if target=860 => change=0 which violates min_change=1
-    utxo = UTXO(txid="a" * 64, vout=0, value_sats=1000, input_vbytes=Decimal("68"))
+    utxo = UTXO(txid="a" * 64, vout=0, value_sats=1000, input_vbytes=68.0)
     params = SelectionParams(
         target_sats=860,
-        fee_rate_sat_per_vb=Decimal("1"),
+        fee_rate_sat_per_vb=1.0,
         min_change_sats=1,
         sizing=_default_sizing(),
     )

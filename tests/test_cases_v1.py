@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-from decimal import Decimal
 from pathlib import Path
 
 import pytest
@@ -31,14 +30,14 @@ def _load_cases() -> list[dict]:
 @pytest.mark.parametrize("case", _load_cases())
 def test_saved_cases_v1_invariants(case: dict) -> None:
     sizing = TxSizing(
-        base_overhead_vbytes=Decimal(case["base_overhead_vbytes"]),
-        recipient_output_vbytes=Decimal(case["recipient_output_vbytes"]),
-        change_output_vbytes=Decimal(case["change_output_vbytes"]),
+        base_overhead_vbytes=float(case["base_overhead_vbytes"]),
+        recipient_output_vbytes=float(case["recipient_output_vbytes"]),
+        change_output_vbytes=float(case["change_output_vbytes"]),
     )
 
     params = SelectionParams(
         target_sats=int(case["target_sats"]),
-        fee_rate_sat_per_vb=Decimal(case["fee_rate_sat_per_vb"]),
+        fee_rate_sat_per_vb=float(case["fee_rate_sat_per_vb"]),
         min_change_sats=int(case["min_change_sats"]),
         sizing=sizing,
     )
@@ -48,7 +47,7 @@ def test_saved_cases_v1_invariants(case: dict) -> None:
             txid=f"{i:064x}",
             vout=i,
             value_sats=int(u["value_sats"]),
-            input_vbytes=Decimal(u["input_vbytes"]),
+            input_vbytes=float(u["input_vbytes"]),
         )
         for i, u in enumerate(case["utxos"])
     ]

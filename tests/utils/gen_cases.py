@@ -1,9 +1,8 @@
 from __future__ import annotations
-
+import math
 import json
 import random
 from dataclasses import asdict, dataclass
-from decimal import Decimal
 from pathlib import Path
 from typing import Literal
 
@@ -19,7 +18,7 @@ InputVBytes = Literal["58", "68", "91", "148"]  # common-ish estimates
 @dataclass(frozen=True, slots=True)
 class UTXOCase:
     value_sats: int
-    input_vbytes: str  # Decimal-as-string for JSON stability
+    input_vbytes: str  # Float-as-string for JSON stability
 
 
 @dataclass(frozen=True, slots=True)
@@ -35,23 +34,21 @@ class CaseV1:
     utxos: list[UTXOCase]
 
 
-def _d(x: str) -> Decimal:
-    return Decimal(x)
+def _d(x: str) -> float:
+    return float(x)
 
 
 def _fee_upper_bound_sat(
-    fee_rate: Decimal,
-    base: Decimal,
-    recipient_out: Decimal,
-    change_out: Decimal,
+    fee_rate: float,
+    base: float,
+    recipient_out: float,
+    change_out: float,
     utxo_count: int,
-    max_input_vbytes: Decimal,
+    max_input_vbytes: float,
 ) -> int:
     # Upper bound fee: assume you might (worst-case) use all utxos with large inputs.
-    vbytes = (
-        base + recipient_out + change_out + (max_input_vbytes * Decimal(utxo_count))
-    )
-    return int((fee_rate * vbytes).to_integral_value(rounding="ROUND_CEILING"))
+    vbytes = base + recipient_out + change_out + (max_input_vbytes * float(utxo_count))
+    return int(math.ceil(fee_rate * vbytes))
 
 
 def generate_cases(
@@ -78,7 +75,7 @@ def generate_cases(
     cases: list[CaseV1] = []
 
     for _case_idx in range(n_cases):
-        fee_rate = Decimal(rnd.choice([1, 2, 3, 5, 8, 10]))  # sat/vB
+        fee_rate = float(rnd.choice([1, 2, 3, 5, 8, 10]))  # sat/vB
         min_change = rnd.choice(
             [1, 100, 300, 546]
         )  # include classic-ish dust-ish values

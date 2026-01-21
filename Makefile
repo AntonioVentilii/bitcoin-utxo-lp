@@ -6,7 +6,7 @@ format:
 	$(POETRY)  toml-sort --in-place pyproject.toml
 
 lint:
-	$(POETRY)  ruff check .
+	$(POETRY)  ruff check . --fix
 
 typecheck:
 	$(POETRY)  mypy .
