@@ -1,0 +1,8 @@
+{
+  "canisters": {
+    "backend": {
+      "type": "kybra",
+      "main": "canisters/backend/main.py"
+    }
+  }
+}

@@ -1,5 +1,11 @@
 .idea/
 
+# dfx temporary files
+.dfx/
+
+# kybra temporary files
+.kybra/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
