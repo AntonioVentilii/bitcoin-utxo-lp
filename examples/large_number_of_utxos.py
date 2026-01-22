@@ -17,7 +17,7 @@ def main() -> None:
             value_sats=10_000 + (i % 3) * 200,  # tiny variance
             input_vbytes=68.0 + (i % 2) * 2.0,  # tiny variance
         )
-        for i in range(1_000_000)
+        for i in range(100_000)
     ]
 
     params = SelectionParams(
