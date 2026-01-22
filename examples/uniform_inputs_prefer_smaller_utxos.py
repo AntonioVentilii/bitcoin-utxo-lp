@@ -20,8 +20,8 @@ def main() -> None:
 
     params = SelectionParams(
         target_sats=54_000,
-        fee_rate_sat_per_vb=1.0,   # keep input fees low
-        min_change_sats=1,         # allow tiny change; we just want "avoid huge change"
+        fee_rate_sat_per_vb=1.0,  # keep input fees low
+        min_change_sats=1,  # allow tiny change; we just want "avoid huge change"
         sizing=TxSizing(
             base_overhead_vbytes=10.0,
             recipient_output_vbytes=31.0,
@@ -35,7 +35,11 @@ def main() -> None:
 
     print("Selected UTXOs:")
     for u in result.selected:
-        print(f"  - {u.txid[:8]}...:{u.vout} value={u.value_sats} sats input_vbytes={u.input_vbytes}")
+        print(
+            f"  - {u.txid[:8]}...:{u.vout} "
+            f"value={u.value_sats} sats "
+            f"input_vbytes={u.input_vbytes}"
+        )
 
     print("\nFee (sats):", result.fee_sats)
     print("Change (sats):", result.change_sats)

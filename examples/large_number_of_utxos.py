@@ -1,3 +1,5 @@
+import time
+
 from bitcoin_utxo_lp import (
     UTXO,
     SelectionParams,
@@ -9,21 +11,19 @@ from bitcoin_utxo_lp import (
 
 def main() -> None:
     utxos = [
-        # One UTXO that's *above* the target, but not enough after fees.
-        UTXO(txid="A" * 64, vout=0, value_sats=83_200, input_vbytes=68.0),
-        # Small top-ups (each below target)
-        UTXO(txid="B" * 64, vout=1, value_sats=2_000, input_vbytes=68.0),
-        UTXO(txid="C" * 64, vout=2, value_sats=1_200, input_vbytes=58.0),
-        # Some decoys
         UTXO(
-            txid="D" * 64, vout=3, value_sats=84_000, input_vbytes=148.0
-        ),  # expensive input
-        UTXO(txid="E" * 64, vout=4, value_sats=10_000, input_vbytes=91.0),
+            txid=f"{i:064x}",
+            vout=0,
+            value_sats=10_000 + (i % 3) * 200,  # tiny variance
+            input_vbytes=68.0 + (i % 2) * 2.0,  # tiny variance
+        )
+        for i in range(1_000_000)
     ]
 
     params = SelectionParams(
-        target_sats=83_000,
-        fee_rate_sat_per_vb=5.0,
+        # Forces selecting ~9–10 inputs, but many combinations exist
+        target_sats=90_000,
+        fee_rate_sat_per_vb=2.5,
         min_change_sats=546,
         sizing=TxSizing(
             base_overhead_vbytes=10.0,
@@ -33,18 +33,25 @@ def main() -> None:
     )
 
     model = SimpleCoinSelectionModel(utxos=utxos, params=params)
-    solver = SimpleMILPSolver(time_limit_seconds=5)
-    result = solver.solve(model)
 
-    print("Selected UTXOs:")
+    # Try tightening / loosening this to see the explosion
+    solver = SimpleMILPSolver(time_limit_seconds=5)
+
+    start = time.perf_counter()
+    result = solver.solve(model)
+    elapsed = time.perf_counter() - start
+
+    print(f"Selected {len(result.selected)} UTXOs:")
     for u in result.selected:
         print(
-            f"  - {u.txid[:8]}...:{u.vout} "
-            f"value={u.value_sats} sats "
+            f"  - {u.txid[:8]}...:{u.vout}  "
+            f"value={u.value_sats} sats  "
             f"input_vbytes={u.input_vbytes}"
         )
 
-    print("\nFee (sats):", result.fee_sats)
+    print()
+    print(f"Solve time (seconds): {elapsed:.4f}")
+    print("Fee (sats):", result.fee_sats)
     print("Change (sats):", result.change_sats)
     print("Tx size (vB):", result.tx_vbytes)
     print("Total input (sats):", result.total_input_sats)
