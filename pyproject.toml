@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 [project]
 name = "bitcoin-utxo-lp"
 version = "0.1.0"
-description = ""
+description = "Bitcoin UTXO coin-selection engine based on LP/MILP optimisation, with precise fee modelling and deterministic, testable results."
 authors = [
   {name = "Antonio Ventilii"}
 ]
