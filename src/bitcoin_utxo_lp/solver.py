@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+import pulp
+
 from .model import SimpleCoinSelectionModel
 from .types import UTXO, SelectionResult
 
@@ -19,13 +21,6 @@ class SimpleMILPSolver:
     time_limit_seconds: int | None = None
 
     def solve(self, model: SimpleCoinSelectionModel) -> SelectionResult:
-        try:
-            import pulp
-        except ImportError as e:  # pragma: no cover
-            raise ImportError(
-                "PuLP is required for the MILP solver. Install with: pip install pulp"
-            ) from e
-
         prob, x_vars, change_var, _fee_expr, _vbytes_expr = model.build()
 
         # Pick a solver.
