@@ -34,7 +34,7 @@ python = "^3.11"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.4.1"
 black = "^26.1.0"
-ruff = "^0.12.7"
+ruff = "^0.14.13"
 mypy = "^1.17.1"
 toml-sort = "^0.24.2"
 types-requests = "^2.32.4.20250913"
